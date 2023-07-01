@@ -9,7 +9,7 @@ from PyQt5.QtCore import Qt, QRect, QSize, QMimeData, QIODevice
 class PaintApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Paint Uygulaması")
+        self.setWindowTitle("Qua Paint")
         self.setGeometry(100, 100, 800, 600)
         self.canvas = CanvasWidget()
         self.setCentralWidget(self.canvas)
@@ -112,7 +112,7 @@ class CanvasWidget(QWidget):
             if self.brush_mode:
                 painter.setPen(pen)
             else:
-                eraser_color = QColor(255, 255, 255)  # Beyaz renk silgi için kullanılır
+                eraser_color = QColor(255, 255, 255)
                 pen.setColor(eraser_color)
                 painter.setPen(pen)
             painter.drawLine(self.last_point, event.pos())
